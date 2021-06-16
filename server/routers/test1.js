@@ -11,6 +11,16 @@ router.get('/test1', async(ctx)=>{
   }
 })
 
+router.post('/test2', async(ctx)=>{
+  let people = {age: 15, name: 'Tom'}
+  console.log('ctx.request.body', ctx.request.body)
+  ctx.body = {
+    success: true,
+    msg: people,
+    status: 200
+  }
+})
+
 router.get('/upload', async(ctx)=>{
   const config = {
     dirPath: 'abc/', // 存放到哪个目录下

@@ -1,5 +1,6 @@
 <template>
   <div class="test2-container">
+    <h2>testComponent1</h2>
     {{ test2_msg }}
     {{test2_msg2}}
   </div>

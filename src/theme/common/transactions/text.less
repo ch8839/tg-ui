@@ -1,0 +1,14 @@
+@import "utils";
+
+@list: primary, info, success, warning, danger;
+
+.@{prefix} {
+  .for(@list, { &-text-@{value} {
+    @normal: "color-@{value}";
+    color: @@normal!important;
+  } });
+}
+
+.saas-text-lightgrey {
+  color: #999;
+}

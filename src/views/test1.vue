@@ -1,7 +1,11 @@
 <template>
   <div class="test1-container">
     <p>test1</p>
-    <button @click="request1">请求1</button>
+    <p>{{nameIntro}}</p>
+    <button @click="request1">get请求1</button>
+    <button @click="request2">post请求1</button>
+    <button @click="fn1">change1</button>
+    <button @click="fn2">change2</button>
     <div class="content">content</div>
     <div
       class="toHead"
@@ -17,16 +21,54 @@ export default {
   name: 'Test1',
   data: function() {
     return {
+      name: 'Tom',
       age: 12,
       isShow: false
+    }
+  },
+  computed: {
+    nameIntro(){
+      let a = this
+      console.log('name', a.name)
+      return 'this is :' + a.name 
     }
   },
   mounted() {
     window.addEventListener('scroll', this.scrollToTop)
   },
   methods: {
+    fn1(){
+      this.age = 'hhh'
+    },
+    fn2() {
+      this.name = 'Jerry'
+    },
     async request1() {
-      // let res = await this.$request.get('http://localhost:3030/test1')
+      let res = await this.$request.get('http://localhost:3030/test1')
+      // let res = await this.$request.get('http://localhost:8081/dev_api/test1')
+      console.log(res)
+    },
+
+    async request2() {
+      // let res = await this.$request.post('http://localhost:3030/test2',{
+      //   name: 'Tom',
+      //   age: undefined
+      // })
+      let like = 'run+jump+song  hhaa'
+      like = encodeURIComponent(like)
+      let res = await this.$request({
+        url: 'http://localhost:3030/test2',
+        method: 'post',
+        data: {
+          name: 'Tom',
+          age: undefined,
+          like
+        },
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      })
+      // let res = await this.$request.get('http://localhost:8081/dev_api/test1')
       console.log(res)
     },
 

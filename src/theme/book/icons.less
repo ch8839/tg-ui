@@ -1,0 +1,49 @@
+@import "utils";
+
+.@{prefix} {
+    &-icon {
+        &-loading {
+            .inline-block;
+            .fonticon(@saas-ic-loading);
+            //width: 31px;
+            //height: 34px;
+            //background-image: url('../image/icon-loading.png');
+            //background-size: contain;
+            font-size: 34px;
+            color: @color-info;
+            animation: animation-rotation 2s infinite linear;
+        }
+        &-message {
+            &-ok,
+            &-info,
+            &-warning,
+            &-danger {
+                .inline-block;
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+                text-align: center;
+                font-size: 10px;
+                color: #fff;
+                border-radius: 18px;
+            }
+            &-ok {
+                .fonticon(@saas-ic-ok);
+                background-color: #18a658;
+            }
+            &-info {
+                .fonticon(@saas-ic-info);
+                background-color: #3388fc;
+            }
+            &-warning {
+                .fonticon(@saas-ic-warning);
+                background-color: #f6bb42;
+            }
+            &-danger {
+                .fonticon(@saas-ic-error);
+                font-size: 8px;
+                background-color: #e95557;
+            }
+        }
+    }
+}

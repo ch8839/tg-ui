@@ -75,7 +75,79 @@ const test_page = [
       name: 'Test12',
       component: () =>
           import('./views/test12.vue')
-    }
+    },
+    {
+      path: '/test13',
+      name: 'Test13',
+      component: () =>
+          import('./views/test13.vue')
+    },
+    {
+      path: '/delivery_manage',
+      name: 'Delivery_manage',
+      component: () => import('./views/delivery_manage/index.vue')
+    },
+    {
+      path: '/operation',
+      name: 'Operation',
+      component: () => import('./views/operation/index.vue')
+    },
+    {
+      path: '/slot',
+      name: 'Slot',
+      component: () => import('./views/slot/index.vue')
+    },
+    {
+      path: '/mixin',
+      name: 'Mixin',
+      component: () => import('./views/mixin/index.vue')
+    },
+    {
+      path: '/HOC',
+      name: 'HOC',
+      component: () => import('./views/HOC/index.vue')
+    },
+    {
+      path: '/safeArea',
+      name: 'safeArea',
+      component: () => import('./views/safeArea/index.vue')
+    },
+    {
+      path: '/excel',
+      name: 'excel',
+      component: () => import('./views/excel/index.vue')
+    },
+    {
+      path: '/proxyData',
+      name: 'proxyData',
+      component: () => import('./views/proxyData/index.vue')
+    },
+    {
+      path: '/component_tra',
+      name: 'component_tra',
+      component: () => import('./views/component_tra/index.vue')
+    },
+    {
+      path: '/vue-key',
+      name: 'vue-key',
+      component: () => import('./views/vue-key/index.vue')
+    },
+    {
+      path: '/component_Gravel',
+      name: 'component_Gravel',
+      component: () => import('./views/component_Gravel/index.vue')
+    },
+    {
+      path: '/component_vant',
+      name: 'component_vant',
+      component: () => import('./views/component_vant/index.vue')
+    },
+    {
+      path: '/$listeners',
+      name: '$listeners',
+      component: () => import('./views/$listeners/index.vue')
+    },
+    
 ]
 
 const main_page = [

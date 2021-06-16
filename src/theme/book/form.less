@@ -1,0 +1,53 @@
+@import "./utils";
+
+.@{prefix}-form {
+    &-group {
+        font-size: 0;
+    }
+    &-label,
+    &-field {
+        .inline-block;
+        font-size: 13px;
+    }
+    &-label {
+        line-height: 16px;
+        &-hint {
+            display: block;
+            color: @color-text-grey-dark;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+    }
+    &-inline {
+        padding: 10px 15px;
+        .clearfix;
+        .@{prefix}-form {
+            &-group {
+                float: left;
+                margin-left: 38px;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+            &-field {
+                margin-left: 12px;
+            }
+        }
+    }
+    &-horizontal {
+        .@{prefix}-form {
+            &-group {
+                position: relative;
+                padding-left: 88px;
+                margin-bottom: 16px;
+            }
+            &-label {
+                position: absolute;
+                top: 8px;
+                left: 0;
+                text-align: left;
+                color: @color-text-black-light;
+            }
+        }
+    }
+}

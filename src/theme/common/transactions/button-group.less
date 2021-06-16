@@ -1,0 +1,41 @@
+@import "utils";
+
+.@{prefix} {
+  &-btn-group {
+    font-size: 0;
+    .@{prefix}-btn {
+      margin-right: 12px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &-btn-tabs {
+    .inline-block;
+    font-size: 0;
+    .@{prefix}-btn-tab {
+      .inline-block;
+      width: 98px;
+      font-size: 13px;
+      line-height: 30px;
+      border: 1px solid @border-color;
+      color: @color-text-black;
+      margin-left: -1px;
+      text-align: center;
+      cursor: pointer;
+      &:first-child {
+        border-radius: 2px 0 0 2px;
+        margin-left: 0;
+      }
+      &:last-child {
+        border-radius: 0 2px 2px 0;
+      }
+      &-active {
+        background-color: @color-info;
+        border-color: @color-info;
+        color: @color-text-white;
+        z-index: 1;
+      }
+    }
+  }
+}

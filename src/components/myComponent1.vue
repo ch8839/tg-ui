@@ -1,5 +1,7 @@
 <template>
   <div class="hello">
+    <h2>myCompents</h2>
+    <slot></slot>
     <button @click="click1">点击</button>
   </div>
 </template>

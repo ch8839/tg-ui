@@ -1,0 +1,71 @@
+.for (@list, @code) {
+    & {
+        .loop(@i:1) when (@i =< length(@list)) {
+            @value: extract(@list, @i);
+            @code();
+            .loop(@i + 1);
+        }
+        .loop();
+    }
+}
+
+.inline-block() {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
+
+.placeholder-color(@color) {
+    &::-webkit-input-placeholder { /* Chrome */
+        color: @color;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+        color: @color;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: @color;
+        opacity: 1;
+    }
+    &:-moz-placeholder { /* Firefox 4 - 18 */
+        color: @color;
+        opacity: 1;
+    }
+}
+
+.clearfix() {
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+}
+
+.fonticon(@icon) {
+    &:before {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        display: block;
+        font-family: 'saas-iconfonts' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: @icon;
+    }
+}
+
+
+
+@keyframes animation-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

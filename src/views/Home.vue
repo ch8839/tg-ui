@@ -4,7 +4,7 @@
     <button @click="request1">点击1<svg-icon icon-class="eye" /></button>
     <my-component1 :fun1="fun1"></my-component1>
     <button @click="goSass">跳转Sass</button>
-    <button  v-for="(item, index) in test_page" :key="index" @click="goTest(index+1)" >跳转test{{index+1}}</button>
+    <button  v-for="(item, index) in test_page" :key="index" @click="goPage(item)" >跳转{{item.name}}</button>
     <!-- <button @click="goTest2">跳转test2</button> -->
   </div>
 </template>
@@ -39,8 +39,9 @@ export default {
     goSass(){
       this.$router.push({path:'/sass'})
     },
-    goTest(page_id){
-      this.$router.push({path:`/test${page_id}`})
+    goPage(router){
+      console.log('router', router)
+      this.$router.push({path: router.path})
     }
   },
 

@@ -1,0 +1,203 @@
+@import "utils";
+
+.@{prefix} {
+    &-btn {
+        .inline-block;
+        font-size: 13px;
+        line-height: 16px;
+        padding: 7px 12px;
+        border: 1px solid @color-border;
+        color: @color-text-black;
+        background-color: #fff;
+        text-decoration: none;
+        border-radius: 2px;
+        outline: 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        text-align: center;
+        &:hover {
+            border-color: @color-info;
+            color: @color-info;
+        }
+        &:active {
+            border-color: @color-info-dark;
+            color: @color-info-dark;
+        }
+        &-lg {
+
+        }
+        &-md {
+            width: 76px;
+        }
+        &-sm {
+
+        }
+        &-block {
+            display: block;
+        }
+        &-default {
+        }
+        &[disabled],
+        &-disabled {
+            cursor: not-allowed;
+            &,
+            &:hover,
+            &:active {
+                border-color: @color-border!important;
+                background-color: @color-bg-grey!important;
+                color: @color-text-grey-light!important;
+            }
+        }
+        &-loading {
+            &,
+            &:hover,
+            &:active {
+                position: relative;
+                border-color: @color-border!important;
+                background-color: @color-bg-grey!important;
+                color: @color-text-grey-light!important;
+                cursor: not-allowed;
+                padding-left: 35px;
+                .fonticon(@saas-ic-loading);
+                &:before {
+                    position: absolute;
+                    top: 8px;
+                    left: 11px;
+                    font-size: 14px;
+                    animation: animation-rotation 2s infinite linear;
+                }
+            }
+        }
+        @list: primary, info, success, warning, danger;
+        .for(@list, { &-@{value} {
+            @normal: "color-@{value}";
+            @light: "color-@{value}-light";
+            @dark: "color-@{value}-dark";
+            border-color: @@normal;
+            background-color: @@normal;
+            color: @color-default;
+            &:hover {
+                border-color: @@light;
+                background-color: @@light;
+                color: @color-default;
+            }
+            &:active {
+                border-color: @@dark;
+                background-color: @@dark;
+                color: @color-default;
+            }
+            &-weak {
+                border-color: @@normal;
+                background-color: @color-default;
+                color: @@normal;
+                &:hover {
+                    border-color: @@normal;
+                    background-color: spin(lighten(@@normal, 35%), -1);
+                    color: @@normal;
+                }
+                &:active {
+                    border-color: @@normal;
+                    background-color: lighten(@@normal, 23%);
+                    color: @@normal;
+                }
+            }
+            &-loading {
+                &,
+                &:hover,
+                &:active {
+                    position: relative;
+                    border-color: @@light;
+                    background-color: @@light;
+                    color: @color-default;
+                    cursor: not-allowed;
+                    padding-left: 35px;
+                }
+                .fonticon(@saas-ic-loading);
+                &:before {
+                    position: absolute;
+                    top: 8px;
+                    left: 11px;
+                    font-size: 14px;
+                    animation: animation-rotation 2s infinite linear;
+                }
+            }
+        } });
+    }
+    &-btn-text {
+        .inline-block;
+        font-size: 13px;
+        line-height: 16px;
+        height: 32px;
+        padding: 8px 12px;
+        color: @color-text-black;
+        background-color: @color-default;
+        background-color: transparent;
+        text-decoration: none;
+        border-radius: 2px;
+        box-sizing: border-box;
+        border: 0;
+        cursor: pointer;
+        text-align: center;
+        @list: primary, info;
+        .for(@list, { &-@{value} {
+            @normal: "color-text-@{value}";
+            @light: "color-text-@{value}-light";
+            @dark: "color-text-@{value}-dark";
+            color: @@normal;
+            &:hover {
+                color: @@light;
+            }
+            &:active {
+                color: @@dark;
+            }
+        } });
+    }
+    &-btn-plus,
+    &-btn-minus {
+        position: relative;
+        .inline-block;
+        width: 12px;
+        height: 12px;
+        font-size: 0;
+        padding: 9px;
+        line-height: 1;
+        border: 1px solid @color-border;
+    }
+    &-btn-plus {
+        &:before {
+            position: absolute;
+            top: 50%;
+            left: 9px;
+            width: 12px;
+            height: 2px;
+            margin-top: -1px;
+            background-color: #b3b3b3;
+            border-radius: 2px;
+            content: '';
+        }
+        &:after {
+            position: absolute;
+            top: 9px;
+            left: 50%;
+            width: 2px;
+            height: 12px;
+            margin-left: -1px;
+            background-color: #b3b3b3;
+            border-radius: 2px;
+            content: '';
+        }
+    }
+    &-btn-minus {
+        &:before {
+            position: absolute;
+            top: 50%;
+            left: 9px;
+            width: 12px;
+            height: 2px;
+            margin-top: -1px;
+            background-color: #b3b3b3;
+            border-radius: 2px;
+            content: '';
+        }
+    }
+}

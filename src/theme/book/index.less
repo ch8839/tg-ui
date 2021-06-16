@@ -1,0 +1,47 @@
+@import "prefix";
+@import "tool";
+@import "layout";
+@import "./font/style";
+@import "text";
+@import "button";
+@import "button-group";
+@import "icons";
+@import "input";
+@import "table";
+@import "form";
+
+a,
+.@{prefix}-link {
+  color: @color-text-info;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    color: @color-text-info-light;
+  }
+  &:active {
+    color: @color-text-info-dark;
+  }
+}
+
+.@{prefix}-link-disabled {
+  &,
+  &:hover,
+  &:active {
+    cursor: pointer;
+    color: @color-text-grey;
+  }
+}
+
+hr {
+  display: block;
+  margin: 15px 0;
+  width: 100%;
+  height: 1px;
+  background-color: @color-border-light;
+  border: 0;
+}
+
+
+.text-primary {
+  color: #f63!important;
+}

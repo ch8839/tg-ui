@@ -4,9 +4,12 @@
       <p> {{ name }} </p>
       <p> {{ age }} </p>
     </div>
-  <test-component1 :test2_msg = test2_msg></test-component1>
-  <button @click="fun1">修改</button>
-  <button @click="fun2">test</button>
+    <test-component1 :test2_msg="test2_msg"></test-component1>
+    <test-component2 :userInfo="userInfo"></test-component2>
+    <p>父组件中的userInfo: {{ userInfo.name }}</p>
+    <button @click="fun1">修改</button>
+    <button @click="fun2">test</button>
+
   </div>
 </template>
 
@@ -15,14 +18,21 @@ let timer = null
 let obj  = {
   name: 'Tom',
   age: 12,
-  test2_msg: '我是传过去的test2_msg'
+  test2_msg: '我是传过去的test2_msg',
+  userInfo: {
+    name: 'Tom',
+    age: 12
+  }
 }
 // Object.freeze(obj) //使用 Object.freeze()，会阻止修改现有的属性，也意味着响应系统无法再追踪变化。
 import testComponent1 from '../components/testComponent1.vue'
+import testComponent2 from '../components/testComponent2.vue'
+
 export default {
   name: 'Test2',
   components:{
-    'test-component1': testComponent1
+    'test-component1': testComponent1,
+    'test-component2': testComponent2
   },
   data: function() {
     return obj

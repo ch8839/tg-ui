@@ -1,0 +1,34 @@
+@import './mobile.less';
+
+.confirm-prepared-wrap {
+  .form-group {
+    font-size: @font-size-xxs;
+    padding: 0;
+
+    .form-item {
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: @gap-s;
+      padding: 0;
+      line-height: 2rem;
+
+      .form-label {
+        flex: none;
+        width: 6rem;
+      }
+    }
+  }
+
+  .pickup-item {
+    .form-label {
+      align-self: center;
+    }
+
+    .pickup-input {
+      background: @color-default;
+      border: 1px solid @border-color-lighter;
+      font-size: @font-size-s;
+      padding: @gap-xxs @gap-xs;
+    }
+  }
+}

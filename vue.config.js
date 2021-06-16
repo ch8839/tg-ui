@@ -26,10 +26,15 @@ module.exports = {
 
   //关闭eslint校验
   lintOnSave: false,
-  // devServer: {
-  //   overlay: {
-  //     warnings: false,
-  //     errors: false
-  //   }
-  // }
+  devServer: {
+    port: 8081, //本地localhost端口
+    proxy: { //设置代理，可解决跨域
+      "/dev_api": {
+        target: "http://localhost:3030",
+        pathRewrite: { "^/dev_api": "" },
+        changeOrigin: true
+      }
+    }
+  },
+  runtimeCompiler: false // true:完整编译，运行时编译
 }

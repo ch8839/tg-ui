@@ -1,0 +1,175 @@
+@import '../../common/transactions/index';
+@import '~gfs-icons/iconfont.less';
+@pagePadding: 18px;
+
+body {
+  font-family: @font-family-regular;
+}
+
+.card {
+    background: @color-default;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0, .05);
+    border-radius: 3px;
+}
+
+.mask {
+  background: #000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .7;
+}
+
+.icon {
+    background-size: cover;
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    vertical-align: middle;
+}
+
+.default-button {
+  background: @color-default;
+  border: 1px solid @border-color-darker;
+  border-radius: 1.5rem;
+  color: @color-text-black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: @font-size-xs;
+  line-height: 1.4;
+  padding: @gap-xxs @gap-xs;
+  text-align: center;
+}
+
+.primary-button {
+  background: @color-primary;
+  border-color: @color-primary;
+  color: @color-default;
+}
+
+.secondary-button {
+  border-color: @color-primary;
+  color: @color-primary;
+}
+
+.text-button {
+    &.primary {
+        color: @color-primary;
+    }
+}
+
+.warning-text {
+    color: @color-warning;
+}
+
+.primary-text {
+  color: @color-primary;
+}
+
+.fix-bottom {
+    background: @color-default;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .default-button {
+      font-family: @font-family-semibold;
+      font-size: @font-size;
+      padding: @gap-xs;
+    }
+}
+
+.form-group {
+  background: @color-default;
+  font-size: @font-size;
+  padding-left: @gap;
+
+  .form-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: @gap;
+
+    .form-label {
+      color: @color-text-black-light;
+    }
+  }
+}
+
+// custom css (that should be move to page css)
+.el-button.button-fix {
+  background-color: @color-primary !important;
+  color: @color-default !important;
+  border: none !important;
+  padding: 12px 20px;
+  &.is-disabled {
+    opacity: 0.5;
+  }
+}
+
+.el-button.el-button--small {
+  padding: 9px 15px;
+}
+
+.order-list-page {
+    background-color: white;
+    font-size: 13px;
+
+    .order-list-header {
+        padding: 0 @pagePadding;
+    }
+}
+
+.form-item {
+    margin: 20px 0;
+    .label, .sub-label {
+        margin: 5px 0;
+    }
+    .sub-label {
+        font-size: 12px;
+        color: #afafaf;
+    }
+}
+
+
+.dialog-fix {
+    .el-dialog__header {
+        padding: 20px;
+    }
+
+    .el-dialog__body {
+        padding: 45px 45px 0;
+        border-top: 1px solid #dcdfe6;
+    }
+    .dialog-body {
+        padding-bottom: 45px;
+        border-bottom: 1px solid #dcdfe6;
+    }
+
+    .beautyTips {
+        padding: 0;
+        margin: 10px 0 0;
+        color: #FF6326
+    }
+
+    .el-dialog__footer {
+        padding: 20px;
+    }
+}
+
+.radio-fix {
+    .el-radio__input.is-checked {
+        .el-radio__inner {
+            border-color: #ff6633;
+            background-color: #ff6633;
+        }
+
+        &+.el-radio__label {
+            color: black;
+        }
+    }
+}
